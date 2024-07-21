@@ -17,6 +17,7 @@ function addBookToLibrary(book) {
     }
 }
 
+//default books
 addBookToLibrary(new Book('Cloud Cuckoo Land', 'Anthony Doerr', 640, true));
 addBookToLibrary(new Book('Diary of a Young Girl', 'Anne Frank', 280, true));
 addBookToLibrary(new Book('1984', 'George Orwell', 328, true));
@@ -77,7 +78,6 @@ function displayBook(book) {
 
 }
 
-//Displaying books on start and after deletion of one of them
 function displayAllBooks() {
     cards.innerHTML = '';
 
@@ -86,8 +86,10 @@ function displayAllBooks() {
     }
 }
 
+//displays all books when webpage is loaded
 displayAllBooks();
 
+//User interface
 const dialog = document.querySelector('dialog');
 const form = document.querySelector('form');
 
