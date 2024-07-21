@@ -76,6 +76,11 @@ input[type='submit'] {
     margin-top: 8px;
 }
 
+input[type='submit']:hover,.new-book-button:hover{
+    background-color: #6202a6;
+    cursor: pointer;
+}
+
 input[type='radio'] {
     accent-color: #7000bf;
 }
@@ -90,14 +95,24 @@ input[type='radio'] {
     margin-top: 8px;
 }
 
+.cancel-button:hover{
+    background-color: #c7c5c5;
+}
+
 h2{
     height: 3em;
     line-height: 1.5em;
 }
 
-i{
-    font-size: 2em;
+.read-container{
     align-self: flex-end;
+}
+
+input[type='checkbox']{
+    transform: scale(1.2);
+    margin-left: 6px;
+    margin-top: 8px;
+    accent-color: #e0e0e0;
 }
 
 .remove-book-button{
@@ -111,4 +126,8 @@ i{
 
 .remove-book-button:hover{
     background-color: #e0e0e0;
+}
+
+button:hover, input[type='radio']{
+    cursor: pointer;
 }

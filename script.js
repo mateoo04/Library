@@ -14,7 +14,6 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(book) {
     if (book instanceof Book) {
         myLibrary.push(book);
-        console.log(book);
     }
 }
 
@@ -30,29 +29,43 @@ function displayBook(book) {
 
     let item = document.createElement('div');
     item.classList.add('item');
+    cards.appendChild(item);
 
     let titleText = document.createElement('h2');
     titleText.textContent = book.title;
+    item.appendChild(titleText);
 
     let authorText = document.createElement('p');
     authorText.textContent = book.author;
+    item.appendChild(authorText);
 
     let pagesText = document.createElement('p');
     pagesText.textContent = `${book.pages} pages`;
-
-    item.appendChild(titleText);
-    item.appendChild(authorText);
     item.appendChild(pagesText);
 
-    if (book.read) {
-        const checkmark = document.createElement('i');
-        checkmark.classList.add('fa-solid', 'fa-check');
-        item.appendChild(checkmark);
-    } else {
-        const checkmark = document.createElement('i');
-        checkmark.classList.add('fa-solid', 'fa-x');
-        item.appendChild(checkmark);
-    }
+    let readContainer = document.createElement('div');
+    readContainer.classList.add('read-container');
+
+    let readCheckbox = document.createElement('input');
+    readCheckbox.id = 'read-checkbox';
+    readCheckbox.name = 'read';
+    readCheckbox.type = 'checkbox';
+
+    if (book.read) readCheckbox.checked = true;
+
+    readContainer.appendChild(readCheckbox);
+
+    let readLabel = document.createElement('label');
+    readLabel.for = 'read-checkbox';
+    readLabel.textContent = 'Read';
+
+    readCheckbox.addEventListener('change', () => {
+        book.read = readCheckbox.checked;
+    });
+
+    readContainer.appendChild(readLabel);
+
+    item.appendChild(readContainer);
 
     let removeButton = document.createElement('button');
     removeButton.classList.add('remove-book-button');
@@ -62,7 +75,6 @@ function displayBook(book) {
 
     item.appendChild(removeButton);
 
-    cards.appendChild(item);
 }
 
 //Displaying books on start and after deletion of one of them
