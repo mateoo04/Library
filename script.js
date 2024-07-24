@@ -1,5 +1,3 @@
-// const myLibrary = [];
-
 const cards = document.querySelector('.book-cards');
 
 class Book {
@@ -99,38 +97,11 @@ class Library {
     }
 }
 
-// function Book(title, author, pages, read) {
-//     this.title = title;
-//     this.author = author;
-//     this.pages = pages;
-//     this.read = read;
-
-//     this.info = function () {
-//         return `${title} by ${author}, ${pages} pages, ${read ? `read` : 'not read yet'}.`;
-//     };
-// }
-
-// function addBookToLibrary(book) {
-//     if (book instanceof Book) {
-//         myLibrary.push(book);
-//     }
-// }
-
 //default books
 Library.addBook(new Book('Cloud Cuckoo Land', 'Anthony Doerr', 640, true));
 Library.addBook(new Book('Diary of a Young Girl', 'Anne Frank', 280, true));
 Library.addBook(new Book('1984', 'George Orwell', 328, true));
 Library.addBook(new Book('The Song of Achilles', 'Madeline Miller', 416, false));
-
-// const cards = document.querySelector('.book-cards');
-
-// function displayAllBooks() {
-//     cards.innerHTML = '';
-
-//     for (const book of myLibrary) {
-//         displayBook(book);
-//     }
-// }
 
 //displays all books when webpage is loaded
 Library.displayAll();
@@ -165,13 +136,3 @@ cancelButton.addEventListener('click', () => {
     form.reset();
     dialog.close();
 });
-
-// function removeBook(title) {
-//     for (index in this.collection) {
-//         if (title == this.collection[index].title) {
-//             this.collection.splice(index, 1);
-//         }
-//     }
-
-//     Library.displayAll();
-// }
